@@ -373,8 +373,12 @@ public class ServiceSynchronize extends LifecycleService {
         builder.setSmallIcon(R.drawable.baseline_compare_arrows_white_24)
             .setContentTitle(getResources().getQuantityString(
                 R.plurals.title_notification_synchronizing, stats.accounts, stats.accounts))
-            .setContentIntent(pi).setAutoCancel(false).setShowWhen(false)
-            .setPriority(Notification.PRIORITY_MIN).setCategory(Notification.CATEGORY_STATUS)
+            .setContentIntent(pi)
+            .setAutoCancel(false)
+            .setShowWhen(false)
+            .setPriority(Notification.PRIORITY_MIN)
+            .setCategory(Notification.CATEGORY_STATUS)
+            .setOngoing(true)
             .setVisibility(Notification.VISIBILITY_SECRET);
 
         if (stats.operations > 0) {
